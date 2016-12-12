@@ -1,4 +1,4 @@
-package ListLab;
+package com.joelimyx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,12 +24,21 @@ public class Driver {
 		
 		//Determine which data structure is fastest for each
 		//operation. Complete the action
-		
+
 		//Delete the first, if any, Student with the last name of "Smith"
-		
+		int x = 0;
+		while (x<19 && !studentArrayList.get(x).getLastName().equalsIgnoreCase("smith")){
+			x++;
+		}
+
+		studentArrayList.remove(x);
+
 		//Change the name of the 3rd entry to "Joe Montana"
-		
+		double gpa = studentArrayList.get(2).getGpa();
+		studentArrayList.set(2,new Student("Joe", "Montana",gpa));
+
 		//Remove the 10th element
+		studentLinkedList.remove(9);
 	}
 	
 	//To generate the ArrayList
@@ -40,7 +49,7 @@ public class Driver {
 			int firstNameIndex = random.nextInt(firstNames.length -1);
 			int lastNameIndex = random.nextInt(lastNames.length -1);
 			double gpa = 3.5 * random.nextDouble() + 0.5;
-			outList.add(new Student(firstNames[firstNameIndex], lastNames[lastNameIndex], gpa));	
+			outList.add(new Student(firstNames[firstNameIndex], lastNames[lastNameIndex], gpa));
 		}
 	}
 
@@ -52,7 +61,7 @@ public class Driver {
 			int firstNameIndex = random.nextInt(firstNames.length -1);
 			int lastNameIndex = random.nextInt(lastNames.length -1);
 			double gpa = 3.5 * random.nextDouble() + 0.5;
-			outList.add(new Student(firstNames[firstNameIndex], lastNames[lastNameIndex], gpa));	
+			outList.add(new Student(firstNames[firstNameIndex], lastNames[lastNameIndex], gpa));
 		}
 	}
 }

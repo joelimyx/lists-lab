@@ -1,4 +1,4 @@
-package ListLab;
+package com.joelimyx;
 
 import java.text.DecimalFormat;
 

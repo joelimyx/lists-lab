@@ -1,4 +1,4 @@
-package ListLab;
+package com.joelimyx;
 
 import java.util.Iterator;
 
@@ -13,14 +13,43 @@ public class MyLinkedList<T> implements Iterable<T>{
 
 	public boolean remove(int index) {
 		//to-do
+		if (index > size){
+			return false;
+		}
+		for (int i = 0; i < index; i++) {
+			System.out.println("remove: "+i);
+			head = head.getNext();
+		}
+
+		Node<T> temp = head.getNext();
+		head.setNext(temp);
+		return true;
+
 	}
 
 	public T get(int index) {
 		//to-do
+		for (int i = 0; i < size; i++) {
+			if (i==index){
+				return head.getData();
+			}
+			head.getNext();
+		}
+		return null;
 	}
 
 	public void add(T obj) {
 		//to-do
+		if (head == null) {
+			head = new Node<>(obj);
+		}else {
+			Node<T> temp = head;
+			while (temp.getNext()!=null){
+				temp = temp.getNext();
+			}
+			temp.setNext(new Node<>(obj));
+		}
+		size++;
 	}
 
 	//The methods below are bonus
@@ -45,11 +74,13 @@ public class MyLinkedList<T> implements Iterable<T>{
 		@Override
 		public boolean hasNext() {
 			//to-do
+			return true;
 		}
 
 		@Override
 		public T next() {
 			//to-do
+			return null;
 		}
 
 		@Override
