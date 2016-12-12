@@ -16,15 +16,14 @@ public class MyLinkedList<T> implements Iterable<T>{
 		if (index > size){
 			return false;
 		}
+		Node<T> iterator = head;
 		for (int i = 0; i < index; i++) {
-			System.out.println("remove: "+i);
-			head = head.getNext();
+			iterator = iterator.getNext();
 		}
 
-		Node<T> temp = head.getNext();
-		head.setNext(temp);
+		Node<T> temp = iterator.getNext();
+		iterator.setNext(temp);
 		return true;
-
 	}
 
 	public T get(int index) {
