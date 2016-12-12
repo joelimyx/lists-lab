@@ -29,11 +29,12 @@ public class MyLinkedList<T> implements Iterable<T>{
 
 	public T get(int index) {
 		//to-do
+		Node<T> temp = head;
 		for (int i = 0; i < size; i++) {
 			if (i==index){
-				return head.getData();
+				return temp.getData();
 			}
-			head.getNext();
+			temp = temp.getNext();
 		}
 		return null;
 	}
